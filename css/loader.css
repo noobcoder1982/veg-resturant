@@ -1,0 +1,153 @@
+/* ========================================================
+   VAISHNO BHOJNALAYA - EDITORIAL LUXURY PRELOADER
+   Minimalist Monochrome & Ecru Aesthetic (#f3f1e7 & #1a1a1a)
+   ======================================================== */
+
+.culinary-preloader {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f3f1e7;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  color: #1a1a1a;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.85s ease;
+  overflow: hidden;
+  user-select: none;
+}
+
+.culinary-preloader.fade-out {
+  opacity: 0;
+  filter: blur(8px);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 480px;
+}
+
+.loader-pure-veg {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #636058;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: blurIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+.loader-pure-veg .veg-dot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #1a1a1a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader-pure-veg .veg-dot::after {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: #1a1a1a;
+  border-radius: 50%;
+}
+
+.loader-title {
+  font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: blurIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+}
+
+.loader-subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
+  color: #636058;
+  letter-spacing: 0.5px;
+  margin-bottom: 36px;
+  opacity: 0;
+  animation: blurIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+/* Minimalist Linear Progress Bar */
+.loader-linear-track {
+  width: 220px;
+  height: 1.5px;
+  background: rgba(26, 26, 26, 0.15);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 14px;
+  opacity: 0;
+  animation: blurIn 0.8s ease 0.5s forwards;
+}
+
+.loader-linear-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: #1a1a1a;
+  transition: width 0.12s linear;
+}
+
+.loader-counter {
+  font-family: 'Plus Jakarta Sans', monospace;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #636058;
+  letter-spacing: 1px;
+}
+
+.loader-skip-btn {
+  margin-top: 32px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
+  color: #636058;
+  background: transparent;
+  border: 1px solid rgba(26, 26, 26, 0.2);
+  padding: 6px 18px;
+  border-radius: 9999px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+}
+
+.loader-skip-btn:hover {
+  background: #1a1a1a;
+  color: #f3f1e7;
+  border-color: #1a1a1a;
+}
+
+@keyframes blurIn {
+  0% {
+    filter: blur(14px);
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

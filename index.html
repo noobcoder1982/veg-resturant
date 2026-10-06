@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaishno Bhojnalaya | Pure Vegetarian Cuisine • New Delhi</title>
+  <meta name="description" content="Vaishno Bhojnalaya - Pure vegetarian restaurant in Pul Pehladpur, New Delhi. Authentic homestyle North Indian cuisine, royal thalis, rich paneer specialties, and slow-simmered dals. Free home delivery on orders above ₹300.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍲</text></svg>">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/loader.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================
+       EDITORIAL PRELOADER (AESTHETIC & MINIMALIST)
+       ======================================================== -->
+  <div id="culinaryPreloader" class="culinary-preloader">
+    <div class="loader-container">
+      <div class="loader-pure-veg">
+        <span class="veg-dot"></span>
+        <span>Pure Vegetarian Tradition</span>
+      </div>
+      <h2 class="loader-title">Vaishno Bhojnalaya</h2>
+      <p class="loader-subtitle">Crafting authentic homestyle North Indian flavors with purity & care.</p>
+      
+      <div class="loader-linear-track">
+        <div id="loaderFill" class="loader-linear-fill"></div>
+      </div>
+      <div id="loaderPercent" class="loader-counter">0%</div>
+
+      <button id="skipLoaderBtn" class="loader-skip-btn">Skip</button>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       TOP LINEAR TICKER
+       ======================================================== -->
+  <aside class="top-linear-ticker" aria-label="Announcement">
+    <div class="container-editorial" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+      <span data-i18n="freeDeliveryBanner">Complimentary Home Delivery on all orders above ₹300</span>
+      <div style="display: flex; gap: 24px; align-items: center;">
+        <a href="tel:+919891660510"><i class="fa-solid fa-phone" style="font-size: 0.72rem; margin-right: 4px;"></i> 9891660510</a>
+        <a href="tel:+917011774361"><i class="fa-solid fa-phone" style="font-size: 0.72rem; margin-right: 4px;"></i> 7011774361</a>
+        <a href="https://maps.app.goo.gl/D6baVidQmz5UEXye9" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-location-dot" style="font-size: 0.72rem; margin-right: 4px;"></i> <span data-i18n="locationShort">Pul Pehladpur, New Delhi</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================
+       EDITORIAL NAVIGATION HEADER
+       ======================================================== -->
+  <header class="editorial-header">
+    <div class="container-editorial header-inner">
+      <a href="#" class="brand-editorial" aria-label="Vaishno Bhojnalaya">
+        <span class="brand-name-serif" data-i18n="brandName">Vaishno Bhojnalaya</span>
+        <span class="brand-sub-sans">
+          <span class="pure-veg-indicator"></span>
+          <span data-i18n="brandSubtitle">Pure Veg Cuisine</span>
+        </span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-editorial-links">
+          <li><a href="#aboutSection" class="nav-editorial-link" data-i18n="navAbout">About</a></li>
+          <li><a href="#curatedSection" class="nav-editorial-link" data-i18n="navMenu">Our Menu</a></li>
+          <li><a href="#thaliSection" class="nav-editorial-link" data-i18n="navThali">Special Thalis</a></li>
+          <li><a href="#specialsSection" class="nav-editorial-link" data-i18n="navSpecials">Daily Specials</a></li>
+          <li><a href="#locationSection" class="nav-editorial-link" data-i18n="navContact">Visit & Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-right-tools">
+        <!-- Language Switcher Pill -->
+        <div class="lang-toggle-pill" aria-label="Language selection">
+          <button type="button" class="lang-btn active" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="hi">हिन्दी</button>
+        </div>
+
+        <!-- Plate / Cart Trigger -->
+        <button type="button" class="header-cart-btn trigger-cart" aria-label="View Cart">
+          <i class="fa-solid fa-basket-shopping" style="font-size: 0.85rem;"></i>
+          <span class="cart-total-amount">₹0</span>
+          <span class="cart-badge-dot cart-count" style="display: none;">0</span>
+        </button>
+
+        <!-- Order Pill Button (Desktop) -->
+        <button type="button" class="btn-pill trigger-cart desktop-only-btn" data-i18n="btnOrder">Order Online</button>
+
+        <!-- Mobile Hamburger Button -->
+        <button type="button" class="btn-circle mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobileNavBackdrop" class="mobile-nav-backdrop"></div>
+  <div id="mobileNavDrawer" class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <span class="brand-name-serif" style="font-size: 1.5rem;" data-i18n="brandName">Vaishno Bhojnalaya</span>
+      <button type="button" class="btn-circle" id="closeMobileNavBtn" aria-label="Close navigation">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="#aboutSection" class="mobile-nav-link" data-i18n="navAbout">About</a></li>
+      <li><a href="#curatedSection" class="mobile-nav-link" data-i18n="navMenu">Our Menu</a></li>
+      <li><a href="#thaliSection" class="mobile-nav-link" data-i18n="navThali">Special Thalis</a></li>
+      <li><a href="#specialsSection" class="mobile-nav-link" data-i18n="navSpecials">Daily Specials</a></li>
+      <li><a href="#locationSection" class="mobile-nav-link" data-i18n="navContact">Visit & Contact</a></li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <div style="margin-bottom: 18px;">
+        <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); display: block; margin-bottom: 6px;">Call for Orders:</span>
+        <a href="tel:+919891660510" style="font-size: 1.15rem; font-weight: 600; color: var(--text-primary); text-decoration: none; display: block;">+91 9891660510</a>
+        <a href="tel:+917011774361" style="font-size: 1rem; color: var(--text-muted); text-decoration: none; display: block; margin-top: 3px;">+91 7011774361</a>
+      </div>
+      <button type="button" class="btn-pill filled trigger-cart" style="width: 100%; padding: 12px; font-size: 0.88rem;" data-i18n="btnOrder">Order Online</button>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       HERO SECTION (MATCHING EDITORIAL REFERENCE)
+       ======================================================== -->
+  <section class="hero-editorial-section" id="heroSection">
+    <div class="container-editorial">
+      <div class="hero-framed-card">
+        <img src="assets/images/hero_thali.jpg" alt="Vaishno Bhojnalaya Grand North Indian Vegetarian Feast" class="hero-bg-img" loading="eager">
+        
+        <div class="hero-dark-overlay">
+          <div class="hero-top-meta">
+            <span class="hero-tag-pill" data-i18n="pureVegTag">100% PURE VEG</span>
+            <div style="font-size: 0.82rem; letter-spacing: 1px; text-transform: uppercase; opacity: 0.85;">Est. Pul Pehladpur • Delhi</div>
+          </div>
+
+          <div class="hero-center-content reveal-blur">
+            <h1 class="hero-main-title" data-i18n="heroTitleItalic">Vaishno Bhojnalaya</h1>
+            <p class="hero-main-subtitle" data-i18n="heroSubtitle">
+              A sanctuary of pure vegetarian cuisine. Crafted with homestyle warmth, desi ghee, and time-honored North Indian flavors.
+            </p>
+            <div class="hero-btn-group">
+              <a href="#menuFullSection" class="btn-hero-light" data-i18n="heroCtaMenu">Explore Menu</a>
+              <button type="button" class="btn-hero-outline trigger-cart" data-i18n="heroCtaWhatsapp">Order via WhatsApp</button>
+            </div>
+          </div>
+
+          <div class="hero-bottom-indicators">
+            <span class="hero-dash active"></span>
+            <span class="hero-dash"></span>
+            <span class="hero-dash"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       ABOUT OUR RESTAURANT SECTION (MATCHING REFERENCE IMAGE 1)
+       ======================================================== -->
+  <section class="section-editorial" id="aboutSection">
+    <div class="container-editorial">
+      <div class="about-header-wrap reveal-blur">
+        <h2 class="editorial-title">
+          <em data-i18n="aboutSectionPre">About</em> <span data-i18n="aboutSectionTitle">our restaurant</span>
+        </h2>
+      </div>
+
+      <div class="about-interior-frame reveal-blur delay-1">
+        <img src="assets/images/interior_dining.jpg" alt="Vaishno Bhojnalaya Restaurant Dining Interior" loading="lazy">
+      </div>
+
+      <div class="about-columns-grid reveal-blur delay-2">
+        <p class="about-col-text" data-i18n="aboutCol1">
+          At Vaishno Bhojnalaya, culinary tradition meets wholesome hospitality. Rooted in the rich heritage of North Indian vegetarian gastronomy, our chefs craft authentic homestyle dishes, slow-simmered gravies, and fragrant tandoori flatbreads prepared fresh daily with uncompromising cleanliness.
+        </p>
+        <p class="about-col-text" data-i18n="aboutCol2">
+          Purity is our sacred standard. We use only farm-fresh seasonal produce, slow-roasted spices, and authentic desi ghee. Whether you are craving our signature Deluxe Thali, creamy Shahi Paneer, or slow-cooked Dal Makhani, every meal brings the soothing comfort of home.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       CURATED MENU SHOWCASE (MATCHING REFERENCE IMAGE 1)
+       ======================================================== -->
+  <section class="section-editorial" id="curatedSection" style="padding-top: 10px;">
+    <div class="container-editorial">
+      <div class="curated-menu-header reveal-blur">
+        <div>
+          <h2 class="editorial-title" style="margin-bottom: 6px;">
+            <em data-i18n="curatedSectionPre">Our</em> <span data-i18n="curatedSectionTitle">menu selections</span>
+          </h2>
+          <p class="editorial-desc" data-i18n="curatedSectionDesc">
+            Explore handcrafted delicacies from slow-cooked handi gravies to piping hot tandoori breads.
+          </p>
+        </div>
+
+        <div class="slider-controls">
+          <button type="button" class="btn-circle" id="sliderPrev" aria-label="Previous dishes">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button type="button" class="btn-circle" id="sliderNext" aria-label="Next dishes">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Horizontal Slider Track -->
+      <div class="curated-slider-track reveal-blur delay-1" id="curatedSliderTrack">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SIGNATURE ROYAL THALIS SECTION
+       ======================================================== -->
+  <section class="section-editorial" id="thaliSection">
+    <div class="container-editorial">
+      <div class="reveal-blur">
+        <h2 class="editorial-title">
+          <em data-i18n="thaliSectionPre">Signature</em> <span data-i18n="thaliSectionTitle">royal vegetarian thalis</span>
+        </h2>
+        <p class="editorial-desc" data-i18n="thaliSectionDesc">
+          Complete wholesome platters served with steaming basmati rice, freshly baked breads, and slow-cooked homestyle gravies.
+        </p>
+      </div>
+
+      <div class="thali-editorial-grid reveal-blur delay-1">
+        <!-- Thali 1: ₹100 -->
+        <div class="thali-card-minimal">
+          <div>
+            <div class="thali-badge-minimal" data-i18n="popularTag">Most Popular</div>
+            <div class="thali-price-display">₹100 <small data-i18n="perPlate">/ platter</small></div>
+            <h3 class="thali-card-name">Regular Veg Thali</h3>
+            <p class="thali-card-desc">Shahi Paneer, slow-cooked Dal Makhani, seasonal fresh sabzi, steamed basmati rice, and 4 fresh tawa rotis.</p>
+          </div>
+          <button type="button" class="btn-pill" onclick="quickAddDish('thali-100')">
+            <span data-i18n="orderThaliBtn">Order Thali</span> • ₹100
+          </button>
+        </div>
+
+        <!-- Thali 2: ₹130 -->
+        <div class="thali-card-minimal">
+          <div>
+            <div class="thali-badge-minimal" data-i18n="chefChoiceTag">Chef's Choice</div>
+            <div class="thali-price-display">₹130 <small data-i18n="perPlate">/ platter</small></div>
+            <h3 class="thali-card-name">Deluxe Missi / Lachha Thali</h3>
+            <p class="thali-card-desc">Shahi Paneer, Dal Makhani, fresh sabzi, basmati rice, paired with your choice of 2 Missi Rotis or 2 crisp Lachha Parathas.</p>
+          </div>
+          <button type="button" class="btn-pill" onclick="quickAddDish('thali-130')">
+            <span data-i18n="orderThaliBtn">Order Thali</span> • ₹130
+          </button>
+        </div>
+
+        <!-- Thali 3: ₹140 -->
+        <div class="thali-card-minimal">
+          <div>
+            <div class="thali-badge-minimal" data-i18n="specialTag">Special Feast</div>
+            <div class="thali-price-display">₹140 <small data-i18n="perPlate">/ platter</small></div>
+            <h3 class="thali-card-name">Special Aloo Paratha Thali</h3>
+            <p class="thali-card-desc">Shahi Paneer, rich Dal Makhani, seasonal vegetable, fragrant rice, served with 2 golden butter-topped stuffed Aloo Parathas.</p>
+          </div>
+          <button type="button" class="btn-pill" onclick="quickAddDish('thali-140')">
+            <span data-i18n="orderThaliBtn">Order Thali</span> • ₹140
+          </button>
+        </div>
+
+        <!-- Thali 4: ₹150 -->
+        <div class="thali-card-minimal">
+          <div>
+            <div class="thali-badge-minimal" data-i18n="royalFeastTag">Royal Feast</div>
+            <div class="thali-price-display">₹150 <small data-i18n="perPlate">/ platter</small></div>
+            <h3 class="thali-card-name">Royal Paneer Paratha Thali</h3>
+            <p class="thali-card-desc">Matar Paneer, Dal Makhani, mix vegetable curry, basmati rice, accompanied by 2 decadent cottage cheese stuffed Paneer Parathas.</p>
+          </div>
+          <button type="button" class="btn-pill" onclick="quickAddDish('thali-150')">
+            <span data-i18n="orderThaliBtn">Order Thali</span> • ₹150
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       DAILY SPECIALS & EVENTS (MATCHING REFERENCE IMAGE 1)
+       ======================================================== -->
+  <section class="section-editorial" id="specialsSection">
+    <div class="container-editorial">
+      <div class="events-section-grid">
+        <div class="events-visual-frame reveal-blur">
+          <img src="assets/images/table_setting_vertical.jpg" alt="Vaishno Bhojnalaya Table Setting & Linear Light" loading="lazy">
+        </div>
+
+        <div class="events-content-col reveal-blur delay-1">
+          <h2 class="editorial-title" style="margin-bottom: 8px;">
+            <em data-i18n="specialsSectionPre">Vaishno Bhojnalaya</em> <br>
+            <span data-i18n="specialsSectionTitle">daily kitchen specials & events</span>
+          </h2>
+
+          <div class="events-list">
+            <div class="event-row-item">
+              <div class="event-tag-date" data-i18n="specialDayTue">TUESDAY / Kadhi Pakoda Special</div>
+              <div class="event-desc-line" data-i18n="specialDayTueDesc">
+                Authentic sour-curd and gramflour curry with crispy fenugreek pakodas, tempered with mustard seeds and curry leaves.
+              </div>
+            </div>
+
+            <div class="event-row-item">
+              <div class="event-tag-date" data-i18n="specialDaySat">SATURDAY / Ghiya Kofta Special</div>
+              <div class="event-desc-line" data-i18n="specialDaySatDesc">
+                Delicate melt-in-the-mouth bottle gourd dumplings simmered in rich aromatic brown gravy. A Saturday tradition.
+              </div>
+            </div>
+
+            <div class="event-row-item">
+              <div class="event-tag-date" data-i18n="specialDailyThali">DAILY / Deluxe Feast Thali (₹130)</div>
+              <div class="event-desc-line" data-i18n="specialDailyThaliDesc">
+                Shahi paneer, slow-cooked dal makhani, seasonal sabzi, fragrant basmati rice, and choice of 2 missi roti or 2 lachha paratha.
+              </div>
+            </div>
+
+            <div class="event-row-item">
+              <div class="event-tag-date" data-i18n="specialFreeDelivery">DELIVERY / Free Home Delivery on ₹300+</div>
+              <div class="event-desc-line" data-i18n="specialFreeDeliveryDesc">
+                Prompt and steaming hot doorstep delivery across Pul Pehladpur and adjoining neighborhoods.
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <button type="button" class="btn-pill filled" onclick="location.href='#menuFullSection'" data-i18n="bookNowBtn">
+              Order Special
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       COMPLETE INTERACTIVE DIGITAL MENU
+       ======================================================== -->
+  <section class="section-editorial" id="menuFullSection" style="padding-top: 20px;">
+    <div class="container-editorial">
+      <div class="reveal-blur">
+        <h2 class="editorial-title">
+          <em data-i18n="curatedSectionPre">Our</em> <span data-i18n="navMenu">full menu</span>
+        </h2>
+        <p class="editorial-desc">
+          Choose half or full portions, explore handcrafted gravies, and order directly to our kitchen.
+        </p>
+      </div>
+
+      <div class="menu-full-wrapper reveal-blur delay-1">
+        <div class="menu-filter-bar">
+          <div class="category-pills-editorial" id="categoryPills">
+            <!-- Rendered by main.js -->
+          </div>
+
+          <div>
+            <input type="text" id="menuSearchInput" class="menu-search-input-editorial" placeholder="Search menu..." data-i18n-ph="searchPlaceholder">
+          </div>
+        </div>
+
+        <div class="dishes-editorial-grid" id="menuGrid">
+          <!-- Rendered by main.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       WHY GUESTS LOVE US (EDITORIAL HIGHLIGHTS)
+       ======================================================== -->
+  <section class="section-editorial">
+    <div class="container-editorial">
+      <div class="reveal-blur" style="margin-bottom: 40px;">
+        <h2 class="editorial-title">
+          <em data-i18n="whyUsPre">Why</em> <span data-i18n="whyUsTitle">our guests love us</span>
+        </h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px;" class="reveal-blur delay-1">
+        <div style="border-left: 1px solid var(--border-hairline); padding-left: 20px;">
+          <h4 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 8px;" data-i18n="whyFeat1Title">100% Pure Vegetarian</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;" data-i18n="whyFeat1Desc">
+            A strictly vegetarian kitchen honoring satvik principles with unmatched hygiene and respect for traditions.
+          </p>
+        </div>
+
+        <div style="border-left: 1px solid var(--border-hairline); padding-left: 20px;">
+          <h4 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 8px;" data-i18n="whyFeat2Title">Fresh Daily Spices</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;" data-i18n="whyFeat2Desc">
+            Whole spices hand-pounded and roasted every morning, delivering rich homestyle North Indian flavors.
+          </p>
+        </div>
+
+        <div style="border-left: 1px solid var(--border-hairline); padding-left: 20px;">
+          <h4 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 8px;" data-i18n="whyFeat3Title">Complimentary Delivery</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;" data-i18n="whyFeat3Desc">
+            Hot, spill-proof packaging delivered free to your doorstep on orders of ₹300 and above.
+          </p>
+        </div>
+
+        <div style="border-left: 1px solid var(--border-hairline); padding-left: 20px;">
+          <h4 style="font-size: 1.15rem; font-weight: 600; margin-bottom: 8px;" data-i18n="whyFeat4Title">Accessible & Generous</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;" data-i18n="whyFeat4Desc">
+            Hearty, filling portions at honest, pocket-friendly prices starting at just ₹100 per wholesome platter.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       LOCATION & TIMINGS SECTION
+       ======================================================== -->
+  <section class="section-editorial" id="locationSection">
+    <div class="container-editorial">
+      <div class="reveal-blur" style="margin-bottom: 40px;">
+        <h2 class="editorial-title">
+          <em data-i18n="locationPre">Find</em> <span data-i18n="locationTitle">our restaurant & timings</span>
+        </h2>
+      </div>
+
+      <div class="location-editorial-grid reveal-blur delay-1">
+        <div class="location-details-col">
+          <div class="loc-item">
+            <h4 data-i18n="addressLabel">Address</h4>
+            <p data-i18n="addressVal">HR-29, 60 Feet Road, Pul Pehladpur (Opp. Hari Krishna Vatika), New Delhi - 110044</p>
+          </div>
+
+          <div class="loc-item">
+            <h4 data-i18n="hoursLabel">Opening Hours</h4>
+            <p data-i18n="hoursVal">Open 7 Days a week • 10:30 AM to 11:00 PM</p>
+          </div>
+
+          <div class="loc-item">
+            <h4 data-i18n="phoneLabel">Phone Orders</h4>
+            <p>
+              <a href="tel:+919891660510">+91 9891660510</a> &bull; 
+              <a href="tel:+917011774361">+91 7011774361</a>
+            </p>
+          </div>
+
+          <div>
+            <a href="https://maps.app.goo.gl/D6baVidQmz5UEXye9" target="_blank" rel="noopener noreferrer" class="btn-pill filled">
+              <i class="fa-solid fa-diamond-turn-right" style="margin-right: 4px;"></i>
+              <span data-i18n="directionsBtn">Open in Google Maps</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="map-editorial-frame">
+          <iframe 
+            title="Vaishno Bhojnalaya Location Map"
+            src="https://maps.google.com/maps?q=28.499918,77.29138&hl=en&z=15&output=embed"
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       EDITORIAL FOOTER (MATCHING REFERENCE IMAGE 1)
+       ======================================================== -->
+  <footer class="editorial-footer">
+    <div class="container-editorial">
+      <div class="footer-top-grid">
+        <div>
+          <div class="footer-brand-title" data-i18n="brandName">Vaishno Bhojnalaya</div>
+          <p class="footer-brand-desc" data-i18n="footerDesc">
+            Vaishno Bhojnalaya is Pul Pehladpur's premier pure vegetarian culinary landmark, serving wholesome North Indian comfort food prepared fresh every single day.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="footerNavTitle">Navigation</h5>
+          <ul>
+            <li><a href="#aboutSection" data-i18n="navAbout">About</a></li>
+            <li><a href="#curatedSection" data-i18n="navMenu">Our Menu</a></li>
+            <li><a href="#thaliSection" data-i18n="navThali">Special Thalis</a></li>
+            <li><a href="#specialsSection" data-i18n="navSpecials">Daily Specials</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 data-i18n="footerContactTitle">Orders & Delivery</h5>
+          <ul>
+            <li><a href="tel:+919891660510">+91 9891660510</a></li>
+            <li><a href="tel:+917011774361">+91 7011774361</a></li>
+            <li><a href="#locationSection">Pul Pehladpur, Delhi</a></li>
+            <li><a href="https://maps.app.goo.gl/D6baVidQmz5UEXye9" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Timings</h5>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+            Monday – Sunday<br>
+            10:30 AM – 11:00 PM<br>
+            Fresh Tiffin & Home Delivery
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div data-i18n="footerRights">© 2026 Vaishno Bhojnalaya. All rights reserved.</div>
+        <div class="social-circle-links">
+          <a href="tel:+919891660510" class="btn-circle" style="width: 32px; height: 32px; font-size: 0.8rem;" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
+          <a href="https://maps.app.goo.gl/D6baVidQmz5UEXye9" target="_blank" rel="noopener noreferrer" class="btn-circle" style="width: 32px; height: 32px; font-size: 0.8rem;" aria-label="Directions"><i class="fa-solid fa-location-dot"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       SHOPPING CART DRAWER & WHATSAPP ORDER BUILDER
+       ======================================================== -->
+  <div id="cartBackdrop" class="cart-backdrop"></div>
+
+  <div id="cartDrawer" class="cart-drawer" role="dialog" aria-modal="true" aria-label="Order Cart">
+    <div class="cart-drawer-header">
+      <h3 class="cart-drawer-title-serif" data-i18n="cartTitle">Your Order</h3>
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <button id="clearCartBtn" style="font-size: 0.78rem; color: #a19d93; background: none; border: none; cursor: pointer;" data-i18n="clearCart">Clear Plate</button>
+        <button id="closeCartBtn" class="btn-circle" style="width: 32px; height: 32px; font-size: 0.8rem;" aria-label="Close cart">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="cart-free-delivery-badge">
+      <div id="freeDeliveryNotice" style="font-size: 0.82rem; font-weight: 500;">
+        Free Home Delivery on minimum orders of ₹300 🛵
+      </div>
+      <div class="cart-delivery-track">
+        <div id="freeDeliveryProgress" class="cart-delivery-fill"></div>
+      </div>
+    </div>
+
+    <div class="cart-drawer-body">
+      <div id="cartItemsList">
+        <!-- Rendered by cart.js -->
+      </div>
+    </div>
+
+    <div id="checkoutSummaryCard" class="cart-checkout-card">
+      <form id="checkoutForm">
+        <div style="display: flex; gap: 18px; margin-bottom: 14px; font-size: 0.82rem; font-weight: 500;">
+          <label style="cursor: pointer; display: flex; align-items: center; gap: 6px;">
+            <input type="radio" name="orderType" value="Home Delivery" checked>
+            <span data-i18n="formOrderTypeDelivery">Home Delivery</span>
+          </label>
+          <label style="cursor: pointer; display: flex; align-items: center; gap: 6px;">
+            <input type="radio" name="orderType" value="Takeaway / Pickup">
+            <span data-i18n="formOrderTypePickup">Takeaway / Pickup</span>
+          </label>
+        </div>
+
+        <input type="text" id="custName" class="input-editorial" placeholder="Your Full Name *" required data-i18n-ph="formName">
+        <input type="tel" id="custPhone" class="input-editorial" placeholder="Mobile Number" data-i18n-ph="formPhone">
+        <input type="text" id="custAddress" class="input-editorial" placeholder="Delivery Address & Landmark *" data-i18n-ph="formAddress">
+        <input type="text" id="custNotes" class="input-editorial" placeholder="Cooking instructions (e.g. less spicy)" data-i18n-ph="formNotes">
+
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px; font-size: 0.78rem; color: #6a675e;">
+          <span>Send to:</span>
+          <label style="cursor: pointer; display: flex; align-items: center; gap: 4px;">
+            <input type="radio" name="whatsappPhone" value="9891660510" checked> 9891660510
+          </label>
+          <label style="cursor: pointer; display: flex; align-items: center; gap: 4px;">
+            <input type="radio" name="whatsappPhone" value="7011774361"> 7011774361
+          </label>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; padding-top: 10px; border-top: 1px solid var(--border-hairline);">
+          <span style="font-weight: 600; font-size: 0.9rem;" data-i18n="cartSubtotal">Subtotal:</span>
+          <span class="cart-total-amount" style="font-family: var(--font-serif); font-style: italic; font-size: 1.6rem; color: #1a1a1a;">₹0</span>
+        </div>
+
+        <button type="submit" class="btn-pill filled" style="width: 100%; padding: 12px; font-size: 0.9rem;">
+          <i class="fa-brands fa-whatsapp" style="margin-right: 4px;"></i>
+          <span data-i18n="btnSubmitWhatsapp">Send Order via WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MOBILE FLOATING BOTTOM ACTION DOCK
+       ======================================================== -->
+  <nav class="mobile-bottom-dock" aria-label="Mobile Quick Actions">
+    <div class="mobile-dock-inner">
+      <a href="tel:+919891660510" class="dock-btn" aria-label="Call">
+        <i class="fa-solid fa-phone"></i>
+        <span data-i18n="callNow">Call</span>
+      </a>
+
+      <a href="#menuFullSection" class="dock-btn" aria-label="Menu">
+        <i class="fa-solid fa-book-open"></i>
+        <span data-i18n="navMenu">Menu</span>
+      </a>
+
+      <button type="button" class="dock-btn dock-cart-btn trigger-cart" aria-label="Order Plate">
+        <div class="dock-cart-icon-wrap">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span class="dock-badge cart-count" style="display: none;">0</span>
+        </div>
+        <span class="cart-total-amount">₹0</span>
+      </button>
+
+      <a href="https://maps.app.goo.gl/D6baVidQmz5UEXye9" target="_blank" rel="noopener noreferrer" class="dock-btn" aria-label="Directions">
+        <i class="fa-solid fa-location-dot"></i>
+        <span data-i18n="navContact">Map</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Scripts -->
+  <script src="js/translations.js"></script>
+  <script src="js/menu-data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
